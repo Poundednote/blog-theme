@@ -1,4 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
+$primary: #7678ed;
+$secondary: #f18701;
+$dark: #3d348b;
+$light: #f8f7ff;
 
+$headings-font-family: 'Lusitana', serif;
+$font-family-base: 'Raleway', sans-serif;
+$hero-height: 60vh;
+$font-size-base: 0.9rem;
+$hero-background: black;
+$hero-color: white;
 
+$display-font-weight: bold;
 @import "~bootstrap/scss/bootstrap";
+@import "~bootstrap-icons/font/bootstrap-icons.min.css";
+
+.navbar {
+    background-color: $light;
+    color: $dark;
+}
+
+
+
+.btn-testimonial {
+    border-radius: 100%;
+}
+
+
+.card {
+    border: 0;
+}
+
+#frontHero {
+    min-height: $hero-height;
+    background: $hero-background;
+    background-size: cover;
+    background-attachment: fixed;
+    color: $hero-color;
+}
+
+.header {
+    @extend #frontHero;
+    min-height: $hero-height * 0.5;
+}
+
+.hero-text {
+    font-weight: bold;
+}
+
+
+.testimonials {
+}
+
+.testimonial-content {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-style: italic;
+    background-color: white;
+}
+
+.service-card {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color: $light;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.testimonial:hover {
+    transform: scale(1.5);
+    transition: all 200ms ease-in-out
+
+}
+
+.testimonial-author {
+    font-weight: bold;
+    font-style: normal;
+}
+
+footer {
+    background: $dark;
+    color: $light;
+    a {
+        color: $white;
+    }
+}
+
+
+body {
+    background-color: #a9a9a9;
+}
