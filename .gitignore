@@ -5,7 +5,6 @@ tmp/
 
 node_modules/
 
-# production
 assets/dist/
 
 # dotenv environment variable files

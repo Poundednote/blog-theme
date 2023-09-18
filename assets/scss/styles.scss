@@ -1,33 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
-$primary: #7678ed;
-$secondary: #f18701;
-$dark: #3d348b;
-$light: #f8f7ff;
+$primary: #2699a3;
+$secondary: #ee8687;
+$tertiary: #99CED4;
+$light: white;
+$dark: black;
 
 $headings-font-family: 'Lusitana', serif;
 $font-family-base: 'Raleway', sans-serif;
 $hero-height: 60vh;
-$font-size-base: 0.9rem;
-$hero-background: black;
-$hero-color: white;
+$font-size-base: 1rem;
+$hero-background: url(../images/journeyjpg.jpg);
+$hero-color: $dark;
 
 $display-font-weight: bold;
 @import "~bootstrap/scss/bootstrap";
 @import "~bootstrap-icons/font/bootstrap-icons.min.css";
 
-.navbar {
+.padded-bottom {
+    padding-bottom: 10%;
+}
+.navbar  {
     background-color: $light;
-    color: $dark;
+    color: $primary;
 }
 
-
+.bg-tertiary {
+    background-color: $tertiary;
+}
 
 .btn-testimonial {
     border-radius: 100%;
 }
 
+.cta {
+    .btn {
+        border-radius: 0;
+    }
+    .form-control {
+        border-radius: 0;
+    }
+}
 
 .card {
     border: 0;
@@ -41,6 +55,87 @@ $display-font-weight: bold;
     color: $hero-color;
 }
 
+.post-card {
+    color: $dark;
+    text-decoration: none;
+    transition: all 200ms ease-in-out;
+    max-height: 250px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: $primary;
+    overflow: hidden;
+    white-space: normal;
+    background: white;
+
+    &:hover {
+        scale: 1.05;
+        transition: all 200ms ease-in-out;
+        @extend .shadow-lg;
+    }
+
+    & > * {
+    }
+
+    &:nth-child(2) {
+        grid-column: span 2;
+    }
+
+    &:nth-child(4) {
+        grid-column: span 2;
+    }
+
+    &:nth-child(3) {
+        grid-row: span 2;
+        max-height: 100%;
+        text-overflow: none;
+        overflow: hidden;
+        max-height: 100%;
+        white-space: normal;
+    }
+
+
+}
+
+.stack {
+    display: grid;
+    & > * {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    & > .underneath {
+        margin-left: 20%;
+        margin-bottom: 10%;
+    }
+}
+
+.color-block {
+    width: 500px;
+    height: 300px;
+}
+
+
+
+#latest-post {
+    color: $dark;
+    text-decoration: none;
+    transition: all 200ms ease-in-out;
+    border-width: 2px;
+    border-style: solid;
+    border-color: $primary;
+    border-color: $secondary;
+    background: $light;
+
+    &:hover {
+        scale: 1.05;
+        transition: all 200ms ease-in-out;
+        @extend .shadow-lg;
+    }
+
+    & h2 {
+        color: $tertiary;
+    }
+}
+
 .header {
     @extend #frontHero;
     min-height: $hero-height * 0.5;
@@ -50,49 +145,46 @@ $display-font-weight: bold;
     font-weight: bold;
 }
 
-
-.testimonials {
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
 }
 
-.testimonial-content {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    font-style: italic;
-    background-color: white;
+
+.grid-col-span-2 {
+    grid-column: span 2;
 }
 
-.service-card {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    background-color: $light;
-    border-style: solid;
-    border-width: 1px;
+.grid-col-span-3 {
+    grid-column: span 3;
 }
 
-.testimonial:hover {
-    transform: scale(1.5);
-    transition: all 200ms ease-in-out
-
+.grid-col-span-1 {
+    grid-column: span 1;
 }
 
-.testimonial-author {
-    font-weight: bold;
-    font-style: normal;
+.grid-row-span-2 {
+    grid-row: span 2;
 }
 
-footer {
-    background: $dark;
-    color: $light;
-    a {
-        color: $white;
-    }
+html {
+    height: 100%;
 }
-
 
 body {
-    background-color: #a9a9a9;
+    display: flex;
+    min-height:  100%;
+    flex-direction: column;
+}
+
+.footer {
+    margin-top: auto;
+    background: $tertiary;
+}
+
+@for $i from 1 through 6 {
+    .display-#{$i} {
+        font-family: $headings-font-family;
+    }
 }
