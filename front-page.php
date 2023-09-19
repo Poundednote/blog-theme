@@ -65,7 +65,7 @@ get_header();
 
     <div class="container bg-light py-5">
         <p class="text-center display-3 mb-5">Whats Popular</p>
-            <div class="posts-grid">
+            <div class="d-flex flex-column d-md-grid posts-grid">
             <?php
                 query_posts( 'order=ASC&orderby=comment_count&posts_per_page=5');
                 if ( have_posts()) : while(have_posts()) : the_post();
@@ -81,7 +81,7 @@ get_header();
         </div>
     </div>
 
-    <div id="cta" class="d-flex flex-column justify-content-center container-fluid bg-primary px-5">
+    <div id="cta" class="d-flex flex-column justify-content-center container-fluid bg-primary py-5 px-5">
         <div class="row my-auto flex-column text-center justify-content-around align-items-center">
             <h2 class="text display-3 mb-5">Dont Miss Out</h2>
             <div class="col-6">
