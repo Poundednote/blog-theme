@@ -37,3 +37,7 @@ add_theme_support('post-thumbnails');
 function default_thumbnail($width, $height) {
     print('<img class="img-fluid" width="' . $width . '" ' . 'height="' . $height . '" ' . 'src="' . get_bloginfo('template_url') . '/assets/images/defaultthumbnail.jpg' . '">');
 }
+
+function get_image($src ,$width, $height) {
+    print('<img class="img-fluid" width="' . $width . '" ' . 'height="' . $height . '" ' . 'src="' . get_bloginfo('template_url') . '/assets/images/' . $src . '">');
+}

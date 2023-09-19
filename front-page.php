@@ -7,7 +7,7 @@ get_header();
         <div class="row justify-content-center align-items-center" id="frontHero">
             <div class="text-center hero-content col-5 lc-block">
                 <div editable="rich">
-                    <h1 class="text-primary display-1"><?php bloginfo('name')?></h1>
+                    <h1 class="display-1"><?php bloginfo('name')?></h1>
                 </div>
                 <div editable="rich">
                     <p class="lead"><?php bloginfo('description') ?></p>
@@ -17,8 +17,7 @@ get_header();
     </div>
 
 
-    <div class="container-fluid bg-tertiary py-5">
-        <div class="container">
+    <div id="topics" class="container py-5">
         <div class="row text-center justify-content-between text-center align-items-start gap-5 p-5">
             <p class="display-4 mb-5">Topics</p>
             <?php
@@ -30,7 +29,7 @@ get_header();
                     <p><?php echo $category->description ?></p>
                 </div>
                 <div class="lc-block pt-4">
-                    <a class="btn btn-primary" href="business.html" role="button">More</a>
+                    <a class="btn btn-primary" href="category/<?php echo $category->slug ?>" role="button">More</a>
                 </div>
             </div>
             <?php
@@ -38,14 +37,14 @@ get_header();
             ?>
         </div>
     </div>
-    </div>
 
     <?php
         query_posts( 'posts_per_page=1');
         while(have_posts()) : the_post();
     ?>
+
     <div class="container bg-light p-5">
-        <div class="row justify-content-between gap-5 flex-column-reverse flex-lg-row">
+        <div class="row justify-content-between gap-5 align-items-center flex-column-reverse flex-lg-row">
             <div class="d-flex flex-column col-lg-6 p-5">
                 <p class="display-3 mb-5">Latest Post</p>
                 <div class="stack">
@@ -82,8 +81,8 @@ get_header();
         </div>
     </div>
 
-    <div class="container-fluid cta bg-primary px-5">
-        <div class="row flex-column text-center py-5 justify-content-between align-items-center mb-3">
+    <div id="cta" class="d-flex flex-column justify-content-center container-fluid bg-primary px-5">
+        <div class="row my-auto flex-column text-center justify-content-around align-items-center">
             <h2 class="text display-3 mb-5">Dont Miss Out</h2>
             <div class="col-6">
                 <p class="fw-bold">Sign Up here to our weekly newsletter to get a free item</p>
@@ -98,9 +97,15 @@ get_header();
         </div>
     </div>
 
-    <div class="container bg-light px-5">
-        <div class="row text-center py-5 justify-content-between align-items-center">
-            <h2 class="text display-3 mb-5">About</h2>
+    <div id="about-section" class="container bg-light p-5">
+        <div class="row justify-content-between align-items-center gap-5 flex-column-reverse flex-lg-row">
+            <div class="d-flex flex-column col-lg-6 p-5">
+                <h2 class="display-3 mb-5">About</h2>
+                <p>This blog is just a way for me to document anything that I am currently obsessed with, learning about or general things I want to share with others. It is my main aim that instead of just learning new things for the purpose of self-satisfaction, I can share my findings & experiences with other people so that they may find it helpful or even at the very least somewhat interesting. My wider vision for this is that it can be something that can grow beyond just me writing up about things that I like, into something much bigger, a community and a living breathing entity that is able to bring people together through the power of curiosity and exploration.</p>
+            </div>
+            <div class="mx-auto col-md-4 pt-5">
+                <?php get_image('knowledge.jpg' ,500, 500); ?>
+            </div>
         </div>
     </div>
 
