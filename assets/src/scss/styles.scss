@@ -10,7 +10,7 @@ $dark: black;
 $headings-font-family: 'Lusitana', serif;
 $font-family-base: 'Raleway', sans-serif;
 $hero-height: 70vh;
-$font-size-base: 1.2rem;
+$font-size-base: 1rem;
 $hero-background: url(../images/herobackground.jpg);
 $hero-color: $light;
 
@@ -103,8 +103,6 @@ $display-font-weight: bold;
             overflow: hidden;
             white-space: normal;
         }
-
-
     }
 }
 
@@ -205,4 +203,21 @@ body {
     .display-#{$i} {
         font-family: $headings-font-family;
     }
+}
+
+.wp-block-heading {
+    @extend .display-4;
+    color: $primary;
+}
+
+.wp-block-quote {
+    border-style: solid;
+    border-width: 0px;
+    border-left-width: 5px;
+    padding-left: 2%;
+}
+
+.wp-block-pullquote {
+    border-style: solid;
+    border-left-width: 5px;
 }

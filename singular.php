@@ -6,7 +6,7 @@
         <div class="row py-5 justify-content-center align-items-center">
             <div class="text-center hero-content col-5 lc-block">
                 <div editable="rich">
-                    <h1 class="text-primary display-1"><?php the_title(); ?></h1>
+                    <h1 class="text-dark display-1"><?php the_title(); ?></h1>
                 </div>
             </div>
         </div>

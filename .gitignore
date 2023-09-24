@@ -2,6 +2,7 @@
 .idea
 *.log
 tmp/
+bun*
 
 node_modules/
 
